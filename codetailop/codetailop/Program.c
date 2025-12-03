@@ -2,10 +2,6 @@
 
 #include <stdio.h>
 
-void timSoNGuyen()
-{
-
-}
 void lapChucNang(int chonChucNang)
 {
     int tiepTuc = 1;
@@ -14,10 +10,10 @@ void lapChucNang(int chonChucNang)
         switch (chonChucNang)
         {
         case 1:
-            timSoNGuyen();
+        demomang2Chieu();
             break;
         case 2 :
-            // goi ten ham 
+            
             break;
         case 3 :
             // goi ten ham 
@@ -34,25 +30,53 @@ void lapChucNang(int chonChucNang)
         system("cls");
     }
 }
+void mangkytu()
+{
+
+
+    {
+        double soThuc[5];
+        double tong = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            printf("Nhap so thu %d: ", i + 1);
+            scanf("%lf", &soThuc[i]);
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            tong += soThuc[i];
+        }
+
+        printf("Tong 5 so vua nhap la: %lf\n", tong);
+    }
+
+}
+void demomang2Chieu()
+{
+    int array[2][3];
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("mang[%d][%d] = ", i, j);
+            scanf("%d", &array[i][j]);
+        }
+    }
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d ", array[i][j]);
+        }
+		printf("\n");
+    }
+}
+
+
 int main()
 {
-    int chonChucNang;
-
-   
-    do
-    {
-        printf("menu\n");
-        printf("1. Kiem Tra so nguyen \n");
-        printf("menu\n");
-        printf("menu\n");
-        printf("menu\n");
-        printf("menu\n");
-        printf("menu\n");
-        printf("menu\n");
-        printf("menu\n");
-
-        scanf("%d", &chonChucNang);
-        lapChucNang(chonChucNang);
-
-    } while (chonChucNang != 0);
+    demomang2Chieu();
 }
+
