@@ -2,34 +2,6 @@
 
 #include <stdio.h>
 
-void lapChucNang(int chonChucNang)
-{
-    int tiepTuc = 1;
-    while (tiepTuc == 1)
-    {
-        switch (chonChucNang)
-        {
-        case 1:
-        demomang2Chieu();
-            break;
-        case 2 :
-            
-            break;
-        case 3 :
-            // goi ten ham 
-            break;
-        case 0 :
-            return;
-        default:
-            printf("chon lai [0-3]");
-            break;
-
-        }
-        printf("tiep tuc chuc nang nay? [1:co/0:khong]");
-        scanf("%d", &tiepTuc);
-        system("cls");
-    }
-}
 void mangkytu()
 {
 
@@ -73,10 +45,78 @@ void demomang2Chieu()
 		printf("\n");
     }
 }
+void demoString()
+{
+    // string
+    char name[50] = { "Son" };// { 'A' 'B' 'C' '\0' }
+    // gets(name); > fgets()
+ //   for (int i = 0; i < 10; i++)
+ //   {
+ //       scanf(" %c", &name[i]);
+ //   }
+    //// xuat du lieu = for + printf
+    while (getchar() != '\n');
+    {
+        printf("%c", getchar());
+    }
+    printf("Nhap ten cua ban: ");
+    fgets(name, sizeof(name), stdin);
 
+    printf("%s", name);
+    printf("\n");
+    // xuat du lieu = for + printf
+  /*  puts(name);*/
+}
+
+void lapChucNang(int chonChucNang)
+{
+    int tiepTuc = 1;
+    while (tiepTuc == 1)
+    {
+        switch (chonChucNang)
+        {
+        case 1:
+            demomang2Chieu();
+            break;
+        case 2:
+            mangkytu();
+            break;
+        case 3:
+			demoString();
+            break;
+        case 0:
+            return;
+        default:
+            printf("chon lai [0-3]");
+            break;
+
+        }
+        printf("tiep tuc chuc nang nay? [1:co/0:khong]");
+        scanf("%d", &tiepTuc);
+        system("cls");
+    }
+}
 
 int main()
 {
-    demomang2Chieu();
+    int chonChucNang;
+
+
+    do
+    {
+        printf("menu\n");
+        printf("1. demo mang 2 chieu \n");
+        printf("2. demo mang ky tu\n");
+        printf("3. demo chuoi ky tu\n");
+        printf("menu\n");
+        printf("menu\n");
+        printf("menu\n");
+        printf("menu\n");
+        printf("menu\n");
+
+        scanf("%d", &chonChucNang);
+        lapChucNang(chonChucNang);
+
+    } while (chonChucNang != 0);
 }
 
