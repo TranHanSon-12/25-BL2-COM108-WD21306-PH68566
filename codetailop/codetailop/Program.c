@@ -56,9 +56,7 @@ void demoString()
  //   }
     //// xuat du lieu = for + printf
     while (getchar() != '\n');
-    {
-        printf("%c", getchar());
-    }
+    
     printf("Nhap ten cua ban: ");
     fgets(name, sizeof(name), stdin);
 
