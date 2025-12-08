@@ -125,7 +125,7 @@ void tinhTienKaraoke()
 		scanf("%d", &gioBD);
         printf("Nhap vao gio ket thuc thue phong: ");
 		scanf("%d", &gioKT);
-        if(gioBD < 11 && gioKT > 24 && gioKT <= gioBD)
+        if(gioBD < 11 || gioKT > 24 || gioKT <= gioBD)
         {
             printf("So gio khong hop le, vui long nhap lai [12h->23h]\n");
             continue;
@@ -442,26 +442,24 @@ void tinhPhanSo()
     int luaChon;
     do
     {
-        printf("Tinh phan so\n");
-		int tu1, mau1, tu2, mau2;
-		printf("Nhap tu so va mau so phan so thu nhat: ");
-		scanf("%d %d", &tu1, &mau1);
-		printf("Nhap tu so va mau so phan so thu hai: ");
-		scanf("%d %d", &tu2, &mau2);
-        if(mau1 == 0 || mau2 == 0)
-        {
-            printf("Mau so khong hop le, vui long nhap lai\n");
-            continue;
-		}
-		double congPhanSo = (tu1 / mau1) + (tu2 / mau2);
-		double truPhanSo = (tu1 / mau1) - (tu2 / mau2);
-		double nhanPhanSo = (tu1 / mau1) * (tu2 / mau2);
-		double chiaPhanSo = (tu1 / mau1) * (mau2 / tu2);
-
-		printf("Tong hai phan so: %.2lf\n", congPhanSo);
-		printf("Hieu hai phan so: %.2lf\n", truPhanSo);
-		printf("Tich hai phan so: %.2lf\n", nhanPhanSo);
-		printf("Thuong hai phan so: %.2lf\n", chiaPhanSo);
+        printf("Toan phan so\n");
+        int tuSo1, mauSo1, tuSo2, mauSo2;
+        printf("Nhap phan so thu nhat (tu so va mau so): ");
+        scanf("%d %d", &tuSo1, &mauSo1);
+        printf("Nhap phan so thu hai (tu so va mau so): ");
+        scanf("%d %d", &tuSo2, &mauSo2);
+        int tongTuSo = tuSo1 * mauSo2 + tuSo2 * mauSo1;
+        int tongMauSo = mauSo1 * mauSo2;
+        int hieuTuSo = tuSo1 * mauSo2 - tuSo2 * mauSo1;
+        int hieuMauSo = mauSo1 * mauSo2;
+        int thuongTuSo = tuSo1 * mauSo2;
+        int thuongMauSo = mauSo1 * tuSo2;
+        int tichTuSo = tuSo1 * tuSo2;
+        int tichMauSo = mauSo1 * mauSo2;
+        printf("Tong hai phan so la: %d/%d\n", tongTuSo, tongMauSo);
+        printf("Hieu hai phan so la: %d/%d\n", hieuTuSo, hieuMauSo);
+        printf("Thuong hai phan so la: %d/%d\n", thuongTuSo, thuongMauSo);
+        printf("Tich hai phan so la: %d/%d\n", tichTuSo, tichMauSo);
         printf("1: tiep tuc truong trinh\n");
         printf("2: quay lai menu\n");
         printf("Lua chon cua ban: ");

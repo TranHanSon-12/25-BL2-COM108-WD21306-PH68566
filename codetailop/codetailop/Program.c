@@ -1,6 +1,7 @@
 
 
 #include <stdio.h>
+#include<string.h>
 
 void mangkytu()
 {
@@ -56,7 +57,7 @@ void demoString()
  //   }
     //// xuat du lieu = for + printf
     while (getchar() != '\n');
-    
+
     printf("Nhap ten cua ban: ");
     fgets(name, sizeof(name), stdin);
 
@@ -64,6 +65,33 @@ void demoString()
     printf("\n");
     // xuat du lieu = for + printf
   /*  puts(name);*/
+    printf("string length : ");
+    printf("%d\n", strlen(name)-1);
+    printf("String Compare The Same As: ");
+    printf("%d\n", strcmp("sOn","sOn"));
+    printf("String Comoare Less Than: ");
+    printf("%d\n", strcmp("A", "C"));
+    printf("String Comoare Greater Than: ");
+    printf("%d\n", strcmp("C", "A"));
+
+    printf("String Reverse (Encryption): ");
+    printf("%s\n", strrev(name));
+    printf("String Reverse (Decryption): ");
+    printf("%s\n", strrev(name));
+    printf("String Lower: ");
+    printf("%s\n", strlwr(name));
+    printf("String Upper: ");
+    printf("%s\n", strupr(name));
+    printf("Find String in String: ");
+    if (strstr(name, "A") != NULL)
+    {
+        printf("Found :");
+        printf("%s", strstr(name, "A"));
+    }
+    else
+    {
+        printf("Not Found\n");
+    }
 }
 
 void lapChucNang(int chonChucNang)
