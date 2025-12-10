@@ -1,15 +1,13 @@
-
 #include <stdio.h>
 void ttinspham()
 {
 	char name[3][50];
 	int soLuong[30];
-
+	
 	for (int i = 0; i < 3; i++)
 	{
 		printf("moi nhap ten san pham :");
-		while (getchar() != '\n');
-		fgets(name[i], sizeof(name[i]), stdin);
+		scanf("%s", &name[i]);
 		printf("moi nhap so luong :");
 		scanf("%d", &soLuong[i]);
 	}
@@ -24,21 +22,18 @@ void sochiahetcho3()
 {
 	int n;
 	int tong = 0;
-	int dem = 0;
 	printf("moi nhap so :");
 	scanf("%d", &n);
 	printf("cac so nho hon %d chia het cho 3 la :\n", n);
-	for (int i = 0; i < n; i++)
+	for (int i = 1; i < n; i++)
 	{
 		if (i % 3 == 0)
 		{
 			printf("%d\n", i);
 			tong += i;
-			dem++;
 		}
 	}
-	float tbcong = (float)tong /( dem);
-	printf("Trung binh cong = %.2f\n", tbcong);
+	printf("tong cac so ho hon %d chia het cho 3 la :%d\n",n, tong);
 }
 
 void ttinnvien()
@@ -49,9 +44,9 @@ void ttinnvien()
 	scanf("%d", &n);
 
 	float luong[100];
-	int dem = 0;
+	int dem = 0;   
 	int viTri[100];
-	int k = 0;
+	int k = 0;   
 
 
 	for (int i = 0; i < n; i++) {
@@ -59,19 +54,21 @@ void ttinnvien()
 		scanf("%f", &luong[i]);
 
 		if (luong[i] > 5) {
-			dem++;
+			dem++;         
 			viTri[k] = i + 1;
 			k++;
 		}
 	}
 
-	printf("So luong nhan vien la: %d\n", n);
+	printf("\nSo luong nhan vien la: %d\n", n);
 	printf("So nhan vien co muc luong tren 5 trieu la: %d\n", dem);
 
 	printf("Vi tri cac muc luong > 5 trieu la: ");
 	for (int i = 0; i < k; i++) {
-		printf("%d\n ", viTri[i]);
+		printf("%d ", viTri[i]);
 	}
+
+	printf("\n");
 }
 
 
@@ -86,31 +83,31 @@ int main()
 		printf("0: thoat\n");
 		printf("lua chon cua ban :");
 		scanf("%d", &chon);
-
+		
 		switch (chon)
 		{
-		case 1:
-		
+		case 1 :
+		{
 			ttinspham();
 			break;
-		
+		}
 		case 2:
-		
+		{
 			sochiahetcho3();
 			break;
-		
+		}
 		case 3:
-		
+		{
 			ttinnvien();
 			break;
-	
-		case 0:
-			printf("dang thoat truong trinh...");
+		}
 		default:
+		{
 			printf("lua chon khong hop le , vui long nhap lai");
 		}
 
+		}
 
 	} while (chon != 0);
-
+	
 }
